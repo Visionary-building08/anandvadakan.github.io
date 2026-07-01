@@ -5,13 +5,20 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: var(--bg);
+  background: #0d1117;
 }
 
 .nf__bg {
   position: absolute;
   inset: 0;
-  opacity: 0.18;
+}
+
+/* subtle dark gradient on top so text reads cleanly */
+.nf__overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(13,17,23,0.35) 0%, rgba(13,17,23,0.65) 100%);
+  pointer-events: none;
 }
 
 .nf__content {
@@ -26,45 +33,46 @@
 }
 
 .nf__code {
-  font-size: clamp(5rem, 18vw, 10rem);
+  font-size: clamp(6rem, 20vw, 12rem);
   font-weight: 700;
   letter-spacing: -0.06em;
   line-height: 1;
-  color: var(--text-primary);
-  opacity: 0.08;
+  color: #f7f7f5;
+  opacity: 0.07;
   user-select: none;
-  margin-bottom: -0.5rem;
+  margin-bottom: -1rem;
 }
 
 .nf__title {
-  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-size: clamp(1.6rem, 4vw, 2.5rem);
   font-weight: 600;
   letter-spacing: -0.03em;
-  color: var(--text-primary);
+  color: #f0f2f5;
 }
 
 .nf__desc {
-  font-size: 1rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
-  max-width: 340px;
+  font-size: 0.975rem;
+  color: rgba(220, 228, 240, 0.6);
+  line-height: 1.65;
+  max-width: 320px;
 }
 
 .nf__home {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  margin-top: 0.75rem;
-  padding: 0.65rem 1.4rem;
-  background: var(--text-primary);
-  color: var(--bg);
+  margin-top: 1rem;
+  padding: 0.65rem 1.5rem;
+  background: #f7f7f5;
+  color: #0d1117;
   border-radius: 8px;
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 600;
   text-decoration: none;
-  transition: background 0.2s;
+  transition: opacity 0.2s;
+  letter-spacing: 0.01em;
 }
 
 .nf__home:hover {
-  background: #1e2433;
+  opacity: 0.85;
 }
