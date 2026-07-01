@@ -7,7 +7,7 @@ export const Card = forwardRef(({ customClass, ...rest }, ref) => (
 ))
 Card.displayName = 'Card'
 
-const HOVER_LIFT = 12
+const HOVER_LIFT = 95
 
 const makeSlot = (i, distX, distY, total) => ({
   x: i * distX,
@@ -86,14 +86,14 @@ const CardSwap = ({
         if (isJumping.current) return
         hoverStates.current[i] = true
         gsap.killTweensOf(el, 'y')
-        gsap.to(el, { y: `-=${HOVER_LIFT}`, duration: 0.28, ease: 'back.out(2)', overwrite: 'auto' })
+        gsap.to(el, { y: `-=${HOVER_LIFT}`, duration: 0.38, ease: 'power3.out', overwrite: 'auto' })
       }
 
       const onLeave = () => {
         if (!hoverStates.current[i]) return
         hoverStates.current[i] = false
         gsap.killTweensOf(el, 'y')
-        gsap.to(el, { y: `+=${HOVER_LIFT}`, duration: 0.22, ease: 'power2.out', overwrite: 'auto' })
+        gsap.to(el, { y: `+=${HOVER_LIFT}`, duration: 0.32, ease: 'power2.inOut', overwrite: 'auto' })
       }
 
       el.addEventListener('mouseenter', onEnter)
