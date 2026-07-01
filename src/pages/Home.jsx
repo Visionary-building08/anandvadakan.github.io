@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import CardSwap, { Card } from '../components/CardSwap'
+import ContactModal from '../components/ContactModal'
 import { caseStudies } from '../data/caseStudies'
 import './Home.css'
 
 export default function Home() {
+  const [showContact, setShowContact] = useState(false)
+
   return (
     <main className="home">
       <section className="hero">
@@ -25,7 +28,9 @@ export default function Home() {
           </p>
           <div className="hero__actions">
             <Link to="/works" className="btn btn--primary">View Works</Link>
-            <Link to="/contact" className="btn btn--ghost">Get in touch</Link>
+            <button className="btn btn--ghost" onClick={() => setShowContact(true)}>
+              Get in touch
+            </button>
           </div>
         </div>
       </section>
@@ -73,6 +78,8 @@ export default function Home() {
           </CardSwap>
         </div>
       </section>
+
+      {showContact && <ContactModal onClose={() => setShowContact(false)} />}
     </main>
   )
 }
