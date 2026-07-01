@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.25rem 3rem;
+  padding: 1rem 3rem;
   background: transparent;
   transition: background 0.3s, backdrop-filter 0.3s, box-shadow 0.3s;
 }
@@ -23,30 +23,11 @@
   font-weight: 500;
   letter-spacing: -0.01em;
   color: var(--text-primary);
-}
-
-.nav__links {
-  display: flex;
-  gap: 2rem;
-}
-
-.nav__link {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  transition: color 0.2s;
-}
-
-.nav__link:hover,
-.nav__link--active {
-  color: var(--text-primary);
+  text-decoration: none;
 }
 
 @media (max-width: 600px) {
   .nav {
-    padding: 1rem 1.5rem;
-  }
-
-  .nav__links {
-    gap: 1.25rem;
+    padding: 0.75rem 1.25rem;
   }
 }
