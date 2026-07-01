@@ -149,10 +149,10 @@ export default function Home() {
             </p>
 
             <p className="hero__desc">
-              I design structured, data-driven strategies that help businesses grow efficiently and make better decisions.
+              Turning complex go-to-market challenges into clean, scalable systems.
             </p>
             <p className="hero__desc">
-              My work focuses on simplifying complexity, improving systems, and solving real-world business problems.
+              GTM strategy, AI workflows, ops efficiency - built from first principles.
             </p>
 
             <div className="hero__stats">
