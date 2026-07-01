@@ -99,15 +99,23 @@
 }
 
 .mb-card__cta {
-  font-size: 0.78rem;
-  font-weight: 500;
-  margin-top: 0.5em;
-  opacity: 0.8;
-  transition: opacity 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-top: 0.75em;
+  padding: 0.4em 1em;
+  border-radius: 100px;
+  border: 1px solid currentColor;
+  width: fit-content;
+  opacity: 0.7;
+  transition: opacity 0.2s, background 0.2s;
 }
 
 .magic-bento-card:hover .mb-card__cta {
   opacity: 1;
+  background: rgba(255, 255, 255, 0.07);
 }
 
 /* Illustration */
