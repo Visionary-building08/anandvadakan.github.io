@@ -37,7 +37,7 @@ export default function Home() {
 
         <div className="hero__card-col">
           <ProfileCard
-            avatarUrl="/anand.jpg"
+            avatarUrl={`${import.meta.env.BASE_URL}anand.jpg`}
             name="Anand V"
             title="GTM Engineer"
             handle="anandvadakan"
