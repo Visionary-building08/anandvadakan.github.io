@@ -3,37 +3,32 @@
   overflow-x: hidden;
 }
 
-/* ── Ambient glow behind hero ── */
-.hero-glow {
-  position: fixed;
-  top: -20%;
-  right: -10%;
-  width: 700px;
-  height: 700px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(61, 90, 128, 0.12) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: 0;
-  animation: glow-drift 8s ease-in-out infinite alternate;
-}
-
-@keyframes glow-drift {
-  from { transform: translate(0, 0) scale(1); }
-  to   { transform: translate(-40px, 30px) scale(1.08); }
-}
-
-/* ── Hero ── */
+/* ── Hero with Silk background ── */
 .hero {
-  min-height: 85vh;
+  position: relative;
+  min-height: 90vh;
+  overflow: hidden;
+}
+
+.hero__silk-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.13;
+  pointer-events: none;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 6rem;
-  padding: 7rem 4rem 4rem;
+  padding: 7rem 4rem 5rem;
   max-width: 1100px;
   margin: 0 auto;
-  position: relative;
-  z-index: 1;
+  min-height: 90vh;
 }
 
 .hero__text {
@@ -217,7 +212,7 @@
 
 /* ── Case Studies Section ── */
 .case-studies-section {
-  padding: 6rem 4rem 4rem;
+  padding: 6rem 4rem 6rem;
   border-top: 1px solid var(--border);
   max-width: 1100px;
   margin: 0 auto;
@@ -225,18 +220,14 @@
   opacity: 0;
   transform: translateY(32px);
   transition: opacity 0.7s ease, transform 0.7s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .case-studies-section.cs--revealed {
   opacity: 1;
   transform: translateY(0);
-}
-
-.cs-section__inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0;
 }
 
 /* Meta copy - centered top */
@@ -246,8 +237,9 @@
   align-items: center;
   text-align: center;
   gap: 0.85rem;
-  max-width: 520px;
-  margin-bottom: 2rem;
+  max-width: 580px;
+  margin-bottom: 3rem;
+  width: 100%;
 }
 
 .cs-section__label {
@@ -291,123 +283,39 @@
   opacity: 0.55;
 }
 
-/* CardSwap right-biased so there is room to jump left */
-.cs-section__swap-area {
-  position: relative;
+/* MagicBento area */
+.cs-section__bento {
   width: 100%;
-  height: 580px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding-right: 6rem;
-  overflow: visible;
-}
-
-/* Override CardSwap's bottom-right anchor -> center */
-.cs-section__swap-area .card-swap-container {
-  position: relative !important;
-  bottom: auto !important;
-  right: auto !important;
-  transform: none !important;
-  overflow: visible !important;
-}
-
-/* Card inner content */
-.case-card {
-  padding: 0 !important;
-}
-
-.case-card__inner {
-  display: flex;
-  flex-direction: column;
-  gap: 0.9rem;
-  padding: 2.25rem;
-  height: 100%;
-  color: #e8eaf0;
-  text-decoration: none;
-  text-align: left;
-}
-
-.case-card__tag {
-  display: inline-block;
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 0.3rem 0.8rem;
-  border-radius: 20px;
-  width: fit-content;
-}
-
-.case-card__title {
-  font-size: 1.55rem;
-  font-weight: 600;
-  letter-spacing: -0.025em;
-  color: #fff;
-  line-height: 1.2;
-}
-
-.case-card__sub {
-  font-size: 0.9rem;
-  color: rgba(220, 224, 235, 0.55);
-  line-height: 1.55;
-  flex: 1;
-}
-
-.case-card__cta {
-  font-size: 0.82rem;
-  font-weight: 500;
-  margin-top: auto;
 }
 
 /* ── Responsive ── */
 @media (max-width: 960px) {
-  .hero {
+  .hero__content {
     flex-direction: column;
     align-items: flex-start;
     gap: 3rem;
     min-height: auto;
     padding: 6rem 2rem 3rem;
-    max-width: 100%;
   }
 
   .hero__card-col {
     width: 100%;
     justify-content: flex-start;
   }
-
-  .hero-glow {
-    width: 400px;
-    height: 400px;
-    top: -10%;
-    right: -20%;
-  }
 }
 
 @media (max-width: 768px) {
-  .hero {
+  .hero__content {
     padding: 5rem 1.5rem 3rem;
   }
 
   .case-studies-section {
     padding: 4rem 1.5rem 4rem;
   }
-
-  .cs-section__swap-area {
-    height: 460px;
-  }
 }
 
 @media (max-width: 480px) {
-  .hero__name {
-    font-size: 2.5rem;
-  }
-
   .hero__stats {
     gap: 1rem;
-  }
-
-  .cs-section__swap-area {
-    height: 380px;
   }
 }
