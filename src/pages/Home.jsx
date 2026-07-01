@@ -102,15 +102,6 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="hero__card-col">
-          <div className="hero__avatar-wrap">
-            <img
-              className="hero__avatar"
-              src={`${import.meta.env.BASE_URL}anand.jpg`}
-              alt="Anand V"
-            />
-          </div>
-        </div>
       </section>
 
       <section ref={csRef} className={`case-studies-section ${csRevealed ? 'cs--revealed' : ''}`}>
