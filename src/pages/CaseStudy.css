@@ -91,7 +91,7 @@
 }
 
 .cs__list li::before {
-  content: '—';
+  content: '-';
   position: absolute;
   left: 0;
   color: var(--text-muted);
