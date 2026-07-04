@@ -186,8 +186,8 @@ export default function Home() {
 
             <div className="hero__stats">
               <div className="hero__stat">
-                <span className="hero__stat-num">B2B</span>
-                <span className="hero__stat-label">Focused</span>
+                <span className="hero__stat-num">Impact</span>
+                <span className="hero__stat-label">Driven</span>
               </div>
               <div className="hero__stat-divider" />
               <div className="hero__stat">
