@@ -90,19 +90,27 @@ const ILLUSTRATIONS = {
   ),
   'organic-food-gtm': (
     <svg viewBox="0 0 260 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      {/* Leaf / organic growth */}
-      <path d="M130 100 Q80 80 70 40 Q100 20 140 30 Q170 40 160 80 Q150 95 130 100Z" fill="rgba(58,125,68,0.35)" stroke="rgba(100,180,100,0.8)" strokeWidth="1.5"/>
-      <path d="M130 100 Q120 70 125 35" stroke="rgba(100,180,100,0.7)" strokeWidth="1.5" strokeLinecap="round"/>
-      <path d="M125 55 Q105 50 95 38" stroke="rgba(100,180,100,0.55)" strokeWidth="1" strokeLinecap="round"/>
-      <path d="M127 72 Q110 68 100 58" stroke="rgba(100,180,100,0.45)" strokeWidth="1" strokeLinecap="round"/>
-      {/* Growth arrow */}
-      <polyline points="30,95 65,78 100,68 130,100" stroke="rgba(58,125,68,0)" strokeWidth="0"/>
-      <polyline points="168,85 190,60 215,38 235,20" stroke="rgba(100,180,100,0.65)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-      <path d="M225 18 L235 20 L233 30" stroke="rgba(100,180,100,0.65)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-      {/* Dots */}
-      <circle cx="168" cy="85" r="3.5" fill="rgba(100,180,100,0.7)"/>
-      <circle cx="215" cy="38" r="3.5" fill="rgba(100,180,100,0.85)"/>
-      <circle cx="235" cy="20" r="3.5" fill="rgba(100,180,100,0.95)"/>
+      {/* Central leaf - centred */}
+      <path d="M130 95 Q95 78 88 48 Q108 22 138 28 Q162 34 158 68 Q150 88 130 95Z" fill="rgba(58,125,68,0.32)" stroke="rgba(100,180,100,0.75)" strokeWidth="1.5"/>
+      {/* Midrib */}
+      <path d="M130 95 Q124 68 128 30" stroke="rgba(100,180,100,0.65)" strokeWidth="1.5" strokeLinecap="round"/>
+      {/* Veins */}
+      <path d="M127 52 Q112 47 104 38" stroke="rgba(100,180,100,0.45)" strokeWidth="1" strokeLinecap="round"/>
+      <path d="M128 68 Q114 64 106 56" stroke="rgba(100,180,100,0.38)" strokeWidth="1" strokeLinecap="round"/>
+      <path d="M129 40 Q140 36 148 30" stroke="rgba(100,180,100,0.38)" strokeWidth="1" strokeLinecap="round"/>
+      {/* Three market nodes arranged around the leaf */}
+      <circle cx="48" cy="38" r="6" fill="rgba(58,125,68,0.4)" stroke="rgba(100,180,100,0.7)" strokeWidth="1.2"/>
+      <circle cx="48" cy="75" r="6" fill="rgba(58,125,68,0.4)" stroke="rgba(100,180,100,0.7)" strokeWidth="1.2"/>
+      <circle cx="210" cy="55" r="6" fill="rgba(58,125,68,0.4)" stroke="rgba(100,180,100,0.7)" strokeWidth="1.2"/>
+      {/* Connector lines from leaf to nodes */}
+      <line x1="88" y1="50" x2="54" y2="42" stroke="rgba(100,180,100,0.35)" strokeWidth="1" strokeDasharray="3 3"/>
+      <line x1="90" y1="68" x2="54" y2="73" stroke="rgba(100,180,100,0.35)" strokeWidth="1" strokeDasharray="3 3"/>
+      <line x1="158" y1="55" x2="204" y2="55" stroke="rgba(100,180,100,0.35)" strokeWidth="1" strokeDasharray="3 3"/>
+      {/* Node labels */}
+      <text x="34" y="26" fill="rgba(100,180,100,0.8)" fontSize="7.5" fontFamily="sans-serif" fontWeight="600">D2C</text>
+      <text x="28" y="93" fill="rgba(100,180,100,0.8)" fontSize="7.5" fontFamily="sans-serif" fontWeight="600">RETAIL</text>
+      <text x="198" y="43" fill="rgba(100,180,100,0.8)" fontSize="7.5" fontFamily="sans-serif" fontWeight="600">QUICK</text>
+      <text x="200" y="53" fill="rgba(100,180,100,0.8)" fontSize="7.5" fontFamily="sans-serif" fontWeight="600">COMM</text>
     </svg>
   ),
   'ops-efficiency-model': (
