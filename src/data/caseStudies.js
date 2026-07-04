@@ -35,4 +35,5 @@ export const caseStudies = [
     summary: 'A ground-up GTM strategy for launching an organic food brand in India - covering positioning, channel selection, and the structural mistakes that kill most brands before they reach scale.',
     accentColor: '#3a7d44',
     tagColor: '#d4edda',
-  },\n]
+  },
+]
