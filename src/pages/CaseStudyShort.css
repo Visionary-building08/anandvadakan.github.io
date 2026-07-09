@@ -1,0 +1,126 @@
+.cs-short {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 7rem 3rem 6rem;
+}
+
+.cs-short--notfound {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cs-short__back {
+  margin-bottom: 3rem;
+}
+
+.cs-short__back-link {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  transition: color 0.2s;
+}
+
+.cs-short__back-link:hover {
+  color: var(--text-primary);
+}
+
+.cs-short__header {
+  margin-bottom: 2.5rem;
+}
+
+.cs-short__tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.75rem;
+  border-radius: 20px;
+  margin-bottom: 1.1rem;
+}
+
+.cs-short__title {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-bottom: 0.85rem;
+}
+
+.cs-short__hook {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.cs-short__body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--text-secondary);
+  margin-bottom: 3rem;
+}
+
+.cs-short__actions {
+  margin-bottom: 2.5rem;
+}
+
+.cs-short__cta-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  border: 1.5px solid;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: opacity 0.2s, transform 0.18s;
+}
+
+.cs-short__cta-primary:hover {
+  opacity: 0.75;
+  transform: translateY(-1px);
+}
+
+.cs-short__execution-cta {
+  margin-top: 3rem;
+  border-top: 1px solid var(--border);
+  padding-top: 2.5rem;
+}
+
+.cs-short__execution-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.5rem 1.75rem;
+}
+
+.cs-short__execution-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.6rem;
+}
+
+.cs-short__execution-link {
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: opacity 0.2s;
+  display: inline-block;
+}
+
+.cs-short__execution-link:hover {
+  opacity: 0.7;
+}
+
+@media (max-width: 600px) {
+  .cs-short {
+    padding: 6rem 1.5rem 4rem;
+  }
+}

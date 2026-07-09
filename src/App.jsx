@@ -5,6 +5,9 @@ import Home from './pages/Home'
 import Works from './pages/Works'
 import Contact from './pages/Contact'
 import CaseStudy from './pages/CaseStudy'
+import CaseStudyShort from './pages/CaseStudyShort'
+import CaseStudyFull from './pages/CaseStudyFull'
+import Execution from './pages/Execution'
 import NotFound from './pages/NotFound'
 import SplashCursor from './components/SplashCursor'
 
@@ -24,6 +27,9 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/works" element={<Works />} />
         <Route path="/works/:slug" element={<CaseStudy />} />
+        <Route path="/case-studies/:slug" element={<CaseStudyShort />} />
+        <Route path="/case-studies/:slug/full" element={<CaseStudyFull />} />
+        <Route path="/execution/:slug" element={<Execution />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
