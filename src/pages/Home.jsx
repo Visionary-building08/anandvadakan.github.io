@@ -6,7 +6,7 @@ import ContactModal from '../components/ContactModal'
 import { caseStudyContent } from '../data/caseStudyContent'
 import './Home.css'
 
-const ROLES = ['Business Analyst', 'Product Analyst', 'AI Workflows']
+const ROLES = ['Business Analyst', 'Strategy Analyst', 'AI Workflows']
 
 function AnimatedRoles() {
   const [idx, setIdx] = useState(0)
