@@ -1,4 +1,11 @@
 node_modules
+*.doc
+*.docx
+*.pdf
+*.xls
+*.xlsx
+*.ppt
+*.pptx
 # public/*.jpg
 dist
 .env
