@@ -34,9 +34,9 @@ export default function Nav() {
         items={NAV_ITEMS}
         activeHref={activeHref}
         baseColor="#18160f"
-        pillColor="#f0ece6"
-        hoveredPillTextColor="#18160f"
-        pillTextColor="#18160f"
+        pillColor="#f97316"
+        hoveredPillTextColor="#f97316"
+        pillTextColor="#fff"
         ease="power3.easeOut"
         initialLoadAnimation={true}
       />

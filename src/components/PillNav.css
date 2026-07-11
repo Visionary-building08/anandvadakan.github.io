@@ -134,14 +134,15 @@
 .pill.is-active::after {
   content: '';
   position: absolute;
-  bottom: -5px;
+  bottom: -6px;
   left: 50%;
   transform: translateX(-50%);
-  width: 10px;
-  height: 10px;
-  background: var(--base, #18160f);
+  width: 6px;
+  height: 6px;
+  background: var(--pill-bg, #f97316);
   border-radius: 50%;
   z-index: 4;
+  opacity: 0.7;
 }
 
 .desktop-only {
