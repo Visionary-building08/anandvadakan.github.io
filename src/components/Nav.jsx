@@ -1,52 +1,52 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import CardNav from './CardNav'
+import React, { useEffect, useState } from 'react'
+import { useNavigate, useLocation } from 'react-router-dom'
+import GooeyNav from './GooeyNav'
+import './Nav.css'
+
+const NAV_ITEMS = [
+  { label: 'Home',    href: '/',        path: '/'        },
+  { label: 'Works',   href: '/works',   path: '/works'   },
+  { label: 'Contact', href: '/contact', path: '/contact' },
+]
 
 export default function Nav() {
+  const [scrolled, setScrolled] = useState(false)
   const navigate = useNavigate()
+  const location = useLocation()
 
-  const items = [
-    {
-      label: 'Home',
-      bgColor: '#1c1814',
-      textColor: '#f0ece6',
-      links: [
-        { label: 'About me', ariaLabel: 'Go to homepage', onClick: () => navigate('/') },
-        { label: 'Hero', ariaLabel: 'Go to top', onClick: () => { navigate('/'); window.scrollTo(0, 0) } },
-      ],
-    },
-    {
-      label: 'Case Studies',
-      bgColor: '#231e18',
-      textColor: '#f0ece6',
-      links: [
-        { label: 'Cancellations Revenue', ariaLabel: 'FlexCancel case study', onClick: () => navigate('/case-studies/flexcancel-revenue-system') },
-        { label: 'Delay Accountability', ariaLabel: 'Hotdrop case study', onClick: () => navigate('/case-studies/hotdrop-recovery') },
-      ],
-    },
-    {
-      label: 'Execution',
-      bgColor: '#2a1f14',
-      textColor: '#f0ece6',
-      links: [
-        { label: 'FlexCancel BRD/FRD', ariaLabel: 'FlexCancel execution docs', onClick: () => navigate('/execution/flexcancel-revenue-system') },
-        { label: 'Delay BRD/FRD', ariaLabel: 'Delay accountability execution docs', onClick: () => navigate('/execution/hotdrop-recovery') },
-      ],
-    },
-  ]
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20)
+    window.addEventListener('scroll', onScroll)
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  const activeIndex = NAV_ITEMS.findIndex(item =>
+    item.path === '/'
+      ? location.pathname === '/'
+      : location.pathname.startsWith(item.path)
+  )
+
+  const gooeyItems = NAV_ITEMS.map(item => ({
+    label: item.label,
+    href: item.href,
+    onClick: () => navigate(item.href),
+  }))
 
   return (
-    <CardNav
-      items={items}
-      baseColor="#18160f"
-      brandColor="#f0ece6"
-      menuColor="#f0ece6"
-      buttonBgColor="#f97316"
-      buttonTextColor="#fff"
-      brandLabel="Anand V"
-      ctaLabel="Contact"
-      onCtaClick={() => navigate('/contact')}
-      ease="elastic.out(1, 0.8)"
-    />
+    <header className={`nav${scrolled ? ' nav--scrolled' : ''}`}>
+      <a href="/" onClick={e => { e.preventDefault(); navigate('/') }} className="nav__brand">
+        Anand V
+      </a>
+      <GooeyNav
+        items={gooeyItems}
+        initialActiveIndex={activeIndex === -1 ? 0 : activeIndex}
+        particleCount={12}
+        particleDistances={[80, 8]}
+        particleR={80}
+        animationTime={500}
+        timeVariance={250}
+        colors={[1, 2, 3, 1, 2, 3, 1, 4]}
+      />
+    </header>
   )
 }

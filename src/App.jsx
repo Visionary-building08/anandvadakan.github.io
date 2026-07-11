@@ -17,7 +17,7 @@ export default function App() {
     <>
       <SplashCursor
         RAINBOW_MODE={false}
-        COLOR="#f97316"
+        COLOR="#8b3a2a"
         DENSITY_DISSIPATION={4}
         VELOCITY_DISSIPATION={2.5}
         SPLAT_RADIUS={0.18}
