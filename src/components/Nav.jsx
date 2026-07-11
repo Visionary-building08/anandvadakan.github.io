@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
-import GooeyNav from './GooeyNav'
+import PillNav from './PillNav'
 import './Nav.css'
 
 const NAV_ITEMS = [
-  { label: 'Home',    href: '/',        path: '/'        },
-  { label: 'Works',   href: '/works',   path: '/works'   },
-  { label: 'Contact', href: '/contact', path: '/contact' },
+  { label: 'Home',    href: '/' },
+  { label: 'Works',   href: '/works' },
+  { label: 'Contact', href: '/contact' },
 ]
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
-  const navigate = useNavigate()
   const location = useLocation()
 
   useEffect(() => {
@@ -20,33 +19,27 @@ export default function Nav() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const activeIndex = NAV_ITEMS.findIndex(item =>
-    item.path === '/'
+  const activeHref = NAV_ITEMS.find(item =>
+    item.href === '/'
       ? location.pathname === '/'
-      : location.pathname.startsWith(item.path)
-  )
-
-  const gooeyItems = NAV_ITEMS.map(item => ({
-    label: item.label,
-    href: item.href,
-    onClick: () => navigate(item.href),
-  }))
+      : location.pathname.startsWith(item.href)
+  )?.href
 
   return (
-    <header className={`nav${scrolled ? ' nav--scrolled' : ''}`}>
-      <a href="/" onClick={e => { e.preventDefault(); navigate('/') }} className="nav__brand">
-        Anand V
-      </a>
-      <GooeyNav
-        items={gooeyItems}
-        initialActiveIndex={activeIndex === -1 ? 0 : activeIndex}
-        particleCount={12}
-        particleDistances={[80, 8]}
-        particleR={80}
-        animationTime={500}
-        timeVariance={250}
-        colors={[1, 2, 3, 1, 2, 3, 1, 4]}
+    <>
+      <header className={`nav${scrolled ? ' nav--scrolled' : ''}`}>
+        <a href="/" className="nav__brand">Anand V</a>
+      </header>
+      <PillNav
+        items={NAV_ITEMS}
+        activeHref={activeHref}
+        baseColor="#18160f"
+        pillColor="#f0ece6"
+        hoveredPillTextColor="#18160f"
+        pillTextColor="#18160f"
+        ease="power3.easeOut"
+        initialLoadAnimation={true}
       />
-    </header>
+    </>
   )
 }
